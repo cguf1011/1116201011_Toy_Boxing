@@ -26,6 +26,7 @@ int main()
     keypad(stdscr, TRUE);
     standby(player1, player2);
     while (true) {
+        /*画面１*/
         if (screenNum == 1) {
             screen1();
             key = getch();
@@ -37,6 +38,7 @@ int main()
                 screenNum = 2;
             }
         }
+        /*画面２*/
         else if (screenNum == 2) {
             countdown();
             screen2(player1, player2);
@@ -48,6 +50,7 @@ int main()
                 screenNum = 4;
             }
         }
+        /*画面３*/
         else if (screenNum == 3) {
             screen3();
             key = getch();
@@ -56,6 +59,7 @@ int main()
                 break;
             }
         }
+        /*画面４*/
         else if (screenNum == 4) {
             screen4();
             key = getch();

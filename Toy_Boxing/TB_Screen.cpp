@@ -132,7 +132,7 @@ void printGameResult(charaInf* player1, charaInf* player2) {
 	else {
 		int player1PunchNum = player1->punchL1 + player1->punchL2 + player1->punchR1 + player1->punchR2;
 		int player2PunchNum = player2->punchL1 + player2->punchL2 + player2->punchR1 + player2->punchR2;
-		fprintf(fp, "プレイヤー情報,左パンチ強,左パンチ弱,右パンチ強,左パンチ弱,パンチ合計,勝利数\n");
+		fprintf(fp, "プレイヤー情報,左パンチ強,左パンチ弱,右パンチ強,右パンチ弱,パンチ合計,勝利数\n");
 		fprintf(fp, "player1,%d,%d,%d,%d,%d,%d\n", player1->punchL1, player1->punchL2,
 			player1->punchR1, player1->punchR2, player1PunchNum, player1->winTime);
 		fprintf(fp, "player2,%d,%d,%d,%d,%d,%d\n", player2->punchL1, player2->punchL2,

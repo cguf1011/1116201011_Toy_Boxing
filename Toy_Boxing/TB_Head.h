@@ -8,8 +8,8 @@ struct charaInf {
 	int playerNum;	/*1Pか2Pか*/
 	int X;	/*x座標*/
 	int Y;	/*y座標*/
-	int punchingL;	/*左手情報*/
-	int punchingR;	/*右手情報*/
+	int punchingL;	/*左情報*/
+	int punchingR;	/*右情報*/
 	int colorNum;	/*色番号*/
 	int punchL1;	/*左パンチ　強め*/
 	int punchL2;	/*左パンチ　弱め*/
