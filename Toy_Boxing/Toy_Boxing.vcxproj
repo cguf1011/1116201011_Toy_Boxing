@@ -151,7 +151,7 @@
     <ClCompile Include="Toy_Boxing.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="character8.h" />
+    <ClInclude Include="character.h" />
     <ClInclude Include="TB_Head.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

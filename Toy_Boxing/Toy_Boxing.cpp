@@ -1,29 +1,69 @@
 ﻿// Toy_Boxing.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
 //
 
+#include <windows.h>
 #include <iostream>
 #include <stdio.h>
+#include <vector>
 #include "TB_Head.h"
 #include <curses.h>
 
+charaInf *player1 = new charaInf();
+charaInf *player2 = new charaInf();
+
+int maxYsize, maxXsize;
+
 int main()
 {
+    int key;
+    int screenNum = 1;
     if (initscr() == NULL) {
         return 1;
     }
+    getmaxyx(stdscr, maxYsize, maxXsize);
+    noecho();
+    cbreak();
+    keypad(stdscr, TRUE);
+    standby(player1, player2);
     while (true) {
-        erase();
-        print_alph(2, 1, 2, 19);
-        print_alph(3, 1, 2, 14);
-        print_alph(4, 1, 2, 24);
-        print_alph(5, 1, 2, 26);
-        print_alph(6, 1, 2, 1);
-        print_alph(7, 1, 2, 14);
-        print_alph(8, 1, 2, 23);
-        print_alph(9, 1, 2, 8);
-        print_alph(10, 1, 2, 13);
-        print_alph(11, 1, 2, 6);
-        refresh();
+        if (screenNum == 1) {
+            screen1();
+            key = getch();
+            if (key == 'q') {
+                break;
+            }
+            else if (key == 'a') {
+                Aflashing();
+                screenNum = 2;
+            }
+        }
+        else if (screenNum == 2) {
+            countdown();
+            screen2(player1, player2);
+            gameMode(player1, player2);
+            if (player1->Y > maxYsize - 4) {
+                screenNum = 3;
+            }
+            else {
+                screenNum = 4;
+            }
+        }
+        else if (screenNum == 3) {
+            screen3();
+            key = getch();
+            if (key == 'q') {
+                printGameResult(player1, player2);
+                break;
+            }
+        }
+        else if (screenNum == 4) {
+            screen4();
+            key = getch();
+            if (key == 'q') {
+                printGameResult(player1, player2);
+                break;
+            }
+        }
     }
     endwin();
     return 0;

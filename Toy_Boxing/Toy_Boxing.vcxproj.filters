@@ -26,7 +26,7 @@
     <ClInclude Include="TB_Head.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="character8.h">
+    <ClInclude Include="character.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
