@@ -141,7 +141,7 @@ void printGameResult(charaInf* player1, charaInf* player2) {
 	}
 }
 
-/*アルファベットを指定された色で表示*/
+/*アルファベットを指定された色で表示　*/
 void print_alph(int x, int y, int colorNum, int alphNum) {
 	unsigned char cbit;	/*判定ビット*/
 	int tx, ty;
