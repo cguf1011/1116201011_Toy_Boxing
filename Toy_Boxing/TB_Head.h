@@ -3,7 +3,7 @@
 #define BUFFSIZE 1024
 #define CHARBUFF 124
 
-/*ƒLƒƒƒ‰î•ñ*/
+/*ƒLƒƒƒ‰î•ñ */
 struct charaInf {
 	int playerNum;	/*1P‚©2P‚©*/
 	int X;	/*xÀ•W*/
